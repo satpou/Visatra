@@ -145,12 +145,6 @@ Beberapa konfigurasi dapat diubah langsung pada source code.
 
 ---
 
-## 📸 Demo
-
-🚧 Coming Soon...
-
----
-
 ## 📌 Roadmap
 
 - [ ] Object Counting
