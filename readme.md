@@ -140,7 +140,11 @@ Buka: `http://localhost:5001`
 
 ## 📄 License
 
-MIT License
+**Visatra** — Copyright (c) 2026 Satria Rahmaddhani
+
+Released under the **MIT License**. You are free to use, modify, and distribute this project for any purpose, including commercial use and private deployment, provided that the copyright notice above is included in all copies or substantial portions of the Software.
+
+For full license terms, see [LICENSE](LICENSE).
 
 ---
 
