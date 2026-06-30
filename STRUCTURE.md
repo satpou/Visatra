@@ -1,6 +1,6 @@
-# Project Structure for Railway Deployment
+# Project Structure — Visatra
 
-railway-object-detection/
+Visatra/
 ├── app.py                 # Main Flask app (entry point)
 ├── config.py              # Configuration
 ├── requirements.txt       # Python dependencies

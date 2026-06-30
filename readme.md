@@ -1,4 +1,4 @@
-# 🎯 Real-Time Object Detection with YOLOv8
+# 🎯 Visatra — Vision + Satria
 
 Aplikasi **Real-Time Object Detection** menggunakan Python, Flask, OpenCV, YOLOv8, dan MediaPipe. Deteksi objek real-time dari webcam, gambar, dan video, plus gesture hand blur.
 
@@ -72,8 +72,8 @@ Aplikasi **Real-Time Object Detection** menggunakan Python, Flask, OpenCV, YOLOv
 Clone:
 
 ```bash
-git clone https://github.com/satpou/realTime-detectionSystem
-cd realTime-detectionSystem
+git clone https://github.com/satpou/Visatra
+cd Visatra
 ```
 
 Virtual environment:
@@ -146,6 +146,6 @@ MIT License
 
 ## 👨‍💻 Author
 
-**Satria Rahmaddhani**
+**Satria Rahmaddhani** — Visatra (Vision + Satria)
 
-GitHub: https://github.com/satpou
+GitHub: https://github.com/satpou/Visatra
