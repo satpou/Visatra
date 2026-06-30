@@ -36,7 +36,7 @@ Aplikasi **Real-Time Object Detection** menggunakan Python, Flask, OpenCV, YOLOv
 
 ```
 .
-├── app/                     # Aplikasi package
+├── app/                     # Flask application (server version)
 │   ├── __init__.py          # Flask app factory
 │   ├── routes/
 │   │   ├── webcam.py        # Video feed (MJPEG)
@@ -49,6 +49,13 @@ Aplikasi **Real-Time Object Detection** menggunakan Python, Flask, OpenCV, YOLOv
 │   │   └── stream.py        # MJPEG streaming generator
 │   └── utils/
 │       └── drawing.py       # OpenCV drawing helpers
+├── spaces/                  # Gradio application (HuggingFace Spaces)
+│   ├── app.py               # Gradio main app
+│   ├── detector.py          # YOLO detection
+│   ├── gesture.py           # MediaPipe hand detection
+│   ├── drawing.py           # OpenCV utilities
+│   ├── requirements.txt     # HF Spaces dependencies
+│   └── README.md            # HF Spaces docs
 ├── models/
 │   ├── yolov8s.pt           # YOLO weights
 │   └── hand_landmarker.task # MediaPipe model
@@ -58,7 +65,7 @@ Aplikasi **Real-Time Object Detection** menggunakan Python, Flask, OpenCV, YOLOv
 │   └── upload.js
 ├── templates/
 │   └── index.html
-├── main.py                  # Entry point
+├── main.py                  # Flask entry point
 ├── Procfile                 # Railway process
 ├── railway.json             # Railway config
 ├── requirements.txt
@@ -129,12 +136,30 @@ Buka: `http://localhost:5001`
 
 ---
 
-## 🚢 Deploy (Railway)
+## 🚢 Deploy
+
+### Option 1: HuggingFace Spaces (Recommended for free tier)
+
+1. Go to [huggingface.co/spaces](https://huggingface.co/spaces)
+2. Create new Space → Select **Gradio** runtime
+3. Upload the `spaces/` folder contents
+4. Space will auto-launch with GPU support (free)
+5. Access via shared link
+
+**Advantages**: Free GPU, no credit card required, auto-deploy from GitHub
+
+**Note**: Processing is on-demand (capture frame → process → return result), not real-time streaming.
+
+See [spaces/README.md](spaces/README.md) for details.
+
+### Option 2: Railway.app (Self-hosted Flask)
 
 1. Push ke GitHub
 2. Buka [railway.app](https://railway.app) → New Project → Deploy from GitHub
-3. Set `PORT=5001` di Environment Variables
+3. Set `DEPLOY_MODE=true` di Environment Variables (skip camera init)
 4. Done.
+
+**Note**: May hit RAM limits on free tier. Set model to `yolov8n.pt` in `app/services/detector.py` for smaller memory footprint.
 
 ---
 

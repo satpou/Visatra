@@ -1,0 +1,10 @@
+flask
+gunicorn
+gradio
+ultralytics
+mediapipe==0.10.35
+opencv-python
+numpy
+torch
+torchvision
+pillow
