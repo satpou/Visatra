@@ -46,30 +46,30 @@ function updateStatus() {
         const modeEl = document.getElementById('current-mode');
         modeEl.textContent = modeLabels[data.mode] || data.mode;
         
-        const colors = { both: 'primary', yolo: 'success', hand: 'warning' };
-        modeEl.className = `badge bg-${colors[data.mode] || 'primary'}`;
+        const colors = { both: 'nb-badge-blue', yolo: 'nb-badge-orange', hand: 'nb-badge-teal' };
+        modeEl.className = `nb-badge ${colors[data.mode] || 'nb-badge-blue'}`;
         
         const modelStatus = document.getElementById('model-status');
         if (data.model_loaded) {
             modelStatus.innerHTML = '✓ Ready';
-            modelStatus.className = 'badge bg-success';
+            modelStatus.className = 'nb-badge nb-badge-teal';
         } else {
             modelStatus.innerHTML = '⏳ Loading';
-            modelStatus.className = 'badge bg-warning';
+            modelStatus.className = 'nb-badge nb-badge-orange';
         }
         
         const mpStatus = document.getElementById('mediapipe-status');
         if (data.mediapipe_available) {
             if (data.landmarker_loaded) {
                 mpStatus.innerHTML = '✓ Ready';
-                mpStatus.className = 'badge bg-success';
+                mpStatus.className = 'nb-badge nb-badge-teal';
             } else {
                 mpStatus.innerHTML = '⏳ Loading';
-                mpStatus.className = 'badge bg-warning';
+                mpStatus.className = 'nb-badge nb-badge-orange';
             }
         } else {
             mpStatus.innerHTML = '✗ Unavailable';
-            mpStatus.className = 'badge bg-danger';
+            mpStatus.className = 'nb-badge nb-badge-red';
         }
     })
     .catch(error => console.error('Error fetching status:', error));
